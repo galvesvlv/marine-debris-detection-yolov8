@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+
+numpy>=1.26,<2.0
+opencv-python-headless<4.12
+
+ultralytics
+norfair
+
+requests
+pillow
