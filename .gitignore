@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Model weights
+*.pt
+
+# Data files
+*.csv
+*.jpeg
+*.mp4
+
+# Datasets
+data/dataset_marinedebris_yolov8/
+
+# Project-specific folders
+marine-polution-detection/
+frontend-marine-polution-detection/
+
+# Jupyter / experiments
+.ipynb_checkpoints/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
