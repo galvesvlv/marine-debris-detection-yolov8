@@ -37,4 +37,4 @@ These references allow consistent model loading across training and inference pi
 The configuration automatically selects the best available compute device:
 
 - `cuda` if an NVIDIA GPU is available
-- `mps`
+- `cpu`
