@@ -1,0 +1,21 @@
+name: marine-debris-yolov8
+
+services:
+
+  api:
+    build: ./inference
+    container_name: marine_debris_api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  streamlit:
+    build: ./app
+    container_name: marine_debris_streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8000
+    restart: unless-stopped
