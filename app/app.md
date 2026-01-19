@@ -46,7 +46,71 @@ The frontend communicates with the inference API through the following endpoints
 - `POST /predict/image` — image inference
 - `POST /predict/video` — video inference
 
-The API base URL is configured via the environment variable:
+---
 
-```text
-API_URL
+## ⚙️ Configuration
+
+The frontend connects to the inference API using the API_URL environment variable.
+
+Default value:
+- http://localhost:8000
+
+To override the API address, define the API_URL environment variable before starting the frontend.
+
+When using Docker Compose, this variable is typically defined automatically.
+
+---
+
+## ▶️ Running the Frontend
+
+### Using Docker (recommended)
+
+From the project root directory, run:
+
+docker compose up --build -d
+
+The Streamlit interface will be available at:
+
+http://localhost:8501
+
+---
+
+### Running locally (optional)
+
+From the frontend directory:
+
+pip install -r requirements.txt  
+streamlit run app.py
+
+---
+
+## 🐳 Docker Support
+
+The frontend is fully containerized using Docker.
+
+### Dockerfile
+
+The Dockerfile:
+
+- Uses python:3.12-slim as the base image
+- Installs Python dependencies from requirements.txt
+- Copies the Streamlit application files
+- Exposes port 8501
+- Launches the application using Streamlit
+
+---
+
+## ⚠️ Requirements
+
+- The inference API must be running and accessible
+- Network connectivity between frontend and API must be available
+
+---
+
+## 🧪 Typical Usage Flow
+
+1. Start the inference API service
+2. Start the frontend application
+3. Open the Streamlit interface in a browser
+4. Upload an image or video
+5. View and download the annotated output
